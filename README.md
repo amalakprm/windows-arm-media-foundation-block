@@ -32,7 +32,7 @@ But the nightmare is just beginning.
 
 Phase 2: The Direct3D 11 Surface Trap
 
-Now that the encoder is present, FFmpeg attempts to use it—and immediately fails
+Now that the encoder is present, FFmpeg attempts to use it and immediately fails
 with:
 
 failed processing input: 80004005 (E_FAIL)
@@ -67,7 +67,7 @@ MediaEncodingProfile.CreateHevc(), the OS threw:
 
 Transcode failed. Reason: Unknown
 
-The Smoking Gun: We changed exactly one word in the C# code—switching
+The Smoking Gun: We changed exactly one word in the C# code switching
 CreateHevc() to CreateMp4() to request H.264. The application instantly fired up
 the Snapdragon Adreno GPU and successfully hardware-encoded the video.
 
